@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --link-color: #337058;
+    --secondary-color: 	#eac1b8;
+    --background-color: #70dce8;
+    --text-color: #1b4534;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+footer p{
+    font-size: 11px;
+}
