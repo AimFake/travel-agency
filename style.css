@@ -7,7 +7,7 @@
 :root {
     --link-color: #337058;
     --secondary-color: 	#eac1b8;
-    --background-color: #70dce8;
+    --background-color: #f4f1ea;
     --text-color: #1b4534;
 }
 
@@ -25,8 +25,16 @@ body {
     line-height: 1.6;
 }
 
+footer p{
+    font-size: 11px;
+}
+
 html {
     scroll-behavior: smooth;
+}
+
+header {
+    background-color: var(--secondary-color);
 }
 
 img {
@@ -34,6 +42,23 @@ img {
     display: block;
 }
 
-footer p{
-    font-size: 11px;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2.5rem;
+}
+
+nav > a {
+    font-size: 1.3rem;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+nav div {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
 }
