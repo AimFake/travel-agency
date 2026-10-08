@@ -92,6 +92,33 @@ nav div {
     max-width: 650px;
 }
 
+#testimonials {
+    padding: 4rem 3rem;
+    background-color: #f8f6f1;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card blockquote {
+    margin: 0 0 1rem 0;
+    font-style: italic;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
 .tour-card {
     background-color: white;
     padding: 2rem;
