@@ -47,6 +47,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2.5rem;
+    border-bottom: 2px solid #f07458;
 }
 
 nav > a {
@@ -80,9 +81,40 @@ nav div {
     border-radius: 8px;
 }
 
+#tours {
+    padding: 4rem 3rem;
+}
+
 .hero-content {
     background-color: rgba(255, 255, 255, 0.42);
     padding: 2rem;
     border-radius: 12px;
     max-width: 650px;
+}
+
+.tour-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tour-card:hover {
+    transform: translateY(-4px);
+}
+
+.tour-duration {
+    font-weight: bold;
+}
+
+.tour-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.tour-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--link-color);
 }
