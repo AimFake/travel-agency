@@ -1,40 +1,53 @@
+
+import { useState } from 'react';
+import { tours } from '../data/tours';
+import TourCard from './TourCard';
+
 function Tours() {
-    return (
-        <section id="tours">
-            <h2>Our tours</h2>
+  const [filter, setFilter] = useState('all');
 
-            <div className="tour-grid">
-                <article className="tour-card">
-                    <h3>Iceland Adventure</h3>
-                    <p className="tour-duration">7 days</p>
-                    <p className="tour-price">€899</p>
-                    <p>Have you ever wanted to see the beauty of Iceland? Here's your chance.</p>
-                </article>
+  const filteredTours = tours.filter((tour) => {
+    if (filter === 'budget') {
+      return tour.price < 700;
+    }
 
-                <article className="tour-card">
-                    <h3>Italian Escape</h3>
-                    <p className="tour-duration">5 days</p>
-                    <p className="tour-price">€649</p>
-                    <p>Visit Rome, discover its ancient history and explore the Italian culture.</p>
-                </article>
+    if (filter === 'premium') {
+      return tour.price >= 700;
+    }
 
-                <article className="tour-card">
-                    <h3>Japan Discovery</h3>
-                    <p className="tour-duration">10 days</p>
-                    <p className="tour-price">€1399</p>
-                    <p>Travel through Tokyo, Kyoto and Osaka, experience Japan on an unforgettable journey!</p>
-                </article>
+    return true;
+  });
 
-                <article className="tour-card">
-                    <h3>Hungarian Weekend</h3>
-                    <p className="tour-duration">3 days</p>
-                    <p className="tour-price">€399</p>
-                    <p>Spend an unforgettable weekend in Budapest, one of Europe’s most beautiful capital cities!</p>
-                </article>
+  return (
+    <section id="tours" className="px-4 py-12 md:px-12">
+      <h2 className="mb-6 text-3xl font-bold">
+        Our tours
+      </h2>
 
-            </div>
-        </section>
-    );
+      <div className="mb-8">
+        <label htmlFor="tour-filter" className="mr-3 font-semibold">
+          Filter by price:
+        </label>
+
+        <select
+          id="tour-filter"
+          value={filter}
+          onChange={(event) => setFilter(event.target.value)}
+          className="rounded-lg border p-3"
+        >
+          <option value="all">All tours</option>
+          <option value="budget">Under €700</option>
+          <option value="premium">€700 and above</option>
+        </select>
+      </div>
+
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+        {filteredTours.map((tour) => (
+          <TourCard key={tour.id} tour={tour} />
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default Tours;
