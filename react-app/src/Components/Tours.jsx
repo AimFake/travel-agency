@@ -19,7 +19,7 @@ function Tours() {
   });
 
   return (
-    <section id="tours" className="px-4 py-12 md:px-12">
+    <section id="tours" className="bg-[#f4f1ea] px-4 py-12 text-[#1b4534] md:px-12">
       <h2 className="mb-6 text-3xl font-bold">
         Our tours
       </h2>
@@ -33,7 +33,7 @@ function Tours() {
           id="tour-filter"
           value={filter}
           onChange={(event) => setFilter(event.target.value)}
-          className="rounded-lg border p-3"
+          className="rounded-lg border border-[#337058] bg-white p-3 text-[#1b4534] focus:outline-2 focus:outline-[#337058]"
         >
           <option value="all">All tours</option>
           <option value="budget">Under €700</option>

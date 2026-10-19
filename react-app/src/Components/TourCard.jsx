@@ -6,7 +6,7 @@ function TourCard({ tour }) {
   const [travellers, setTravellers] = useState(1);
 
   return (
-    <article className="rounded-xl bg-white p-6 shadow-md">
+    <article className="h-full rounded-xl bg-white p-6 text-[#1b4534] shadow-md transition-transform hover:-translate-y-1">
       <h3 className="mb-3 text-xl font-bold">
         {tour.title}
       </h3>
