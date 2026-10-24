@@ -1,10 +1,26 @@
-
-import { useState } from 'react';
-import { tours } from '../data/tours';
+import { useState, useEffect } from 'react';
 import TourCard from './TourCard';
 
 function Tours() {
-  const [filter, setFilter] = useState('all');
+  const [tours, setTours] = useState([]);
+
+  useEffect(() => {
+    async function loadTours() {
+      try {
+        const response = await fetch('http://localhost:3001/api/tours');
+
+        if (!response.ok) {
+          throw new Error('Failed to load tours');
+        }
+
+        const data = await response.json();
+        setTours(data);
+      } catch (error) {
+        console.error('Error loading tours:', error);
+      }
+    }
+    loadTours();
+  }, []);
 
   const filteredTours = tours.filter((tour) => {
     if (filter === 'budget') {
